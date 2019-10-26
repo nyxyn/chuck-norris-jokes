@@ -19,6 +19,7 @@ def get_joke():
     value = response['value']
     return html.unescape(value['joke'])
 
+
 def say(channel):
     joke = get_joke()
     command = 'msg {} <Chuck Norris Bot>: {}'.format(channel, joke)
