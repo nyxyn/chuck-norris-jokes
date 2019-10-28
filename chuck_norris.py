@@ -21,9 +21,11 @@ def get_joke():
 
 
 def say(channel):
+    channel_context = hexchat.find_context(channel=channel)
+
     joke = get_joke()
     command = 'msg {} <Chuck Norris Bot>: {}'.format(channel, joke)
-    hexchat.command(command)
+    channel_context.command(command)
 
 
 def print_callback(words, eol, userdata):
